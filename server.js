@@ -92,7 +92,7 @@ app.post("/api/upload", upload.array("images"), async (req, res) => {
         fs.renameSync(file.path, newFilePath);
 
         // const python_response = spawn('python', ['generate_description.py', newFilePath]);
-        const python_response = spawn('python3', [path.join(__dirname, 'generate_description.py'), newFilePath]);
+        const python_response = spawn('/home/site/wwwroot/i2d/bin/python', [path.join(__dirname, 'generate_description.py'), newFilePath]);
 
         return new Promise((resolve) => {
             python_response.stdout.on('data', (data) => {
