@@ -64,7 +64,7 @@ function App() {
       }
     } catch (error) {
       console.error("Error uploading images:", error.response ? error.response.data : error.message);
-      showNotification("Something went wrong with the server!", "error");
+      showNotification("Something went wrong with the server!:",error.response ? error.response.data : error.message, "error");
     } finally {
       setIsLoading(false);
     }
